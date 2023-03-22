@@ -1,0 +1,51 @@
+name: Release packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    # Determine current version
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.9.7
+      with:
+        versionSpec: '5.x'
+    - name: Determine Version
+      id: gitversion
+      uses: gittools/actions/gitversion/execute@v0.9.7        
+
+    # Restore NuGet packages
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+      with: 
+        nuget-version: '5.x'
+    - name: Restore NuGet Packages
+      run: nuget restore ldap-filter-to-lambda-expression.sln
+           
+    # Build solution
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+    - name: Build
+      run: |
+        msbuild ldap-filter-to-lambda-expression.sln
+
+    - run: dotnet pack -o nuget /p:ContinuousIntegrationBuild=true -p:PackageVersion=${{ steps.gitversion.outputs.nuGetVersionV2 }} -c Release ./src/AxaFrance.LdapFiltersToLambdaExpression/AxaFrance.LdapFiltersToLambdaExpression.csproj
+        
+    - uses: actions/upload-artifact@v3
+      with:
+        name: packages
+        path: |
+          nuget/*.nupkg
+          nuget/*.snupkg
+          
+    - name: Publish Nuget to GitHub registry
+      run: dotnet nuget push 'nuget/AxaFrance.LdapFiltersToLambdaExpression.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg' -k ${{ secrets.NUGET_TOKEN }} -s 'https://api.nuget.org/v3/index.json' --skip-duplicate
