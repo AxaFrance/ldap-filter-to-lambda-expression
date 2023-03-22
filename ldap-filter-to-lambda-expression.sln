@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxaFrance.LdapFiltersToLambdaExpression", "src\AxaFrance.LdapFiltersToLambdaExpression\AxaFrance.LdapFiltersToLambdaExpression.csproj", "{56972B12-AB73-45A3-8FA3-D7217135C50E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44F9698F-EC43-4110-B4EC-259394E2AEA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{93FF9EA8-FB9E-4931-AD7E-E4EF2596D97F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxaFrance.LdapFiltersToLambdaExpression.Tests", "test\AxaFrance.LdapFiltersToLambdaExpression.Tests\AxaFrance.LdapFiltersToLambdaExpression.Tests.csproj", "{099EE102-21AB-42A7-A866-B39BBBA419DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A710C4DF-3093-4641-B2C8-129F377CBB30}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2E293FC6-02D9-4B2A-836C-FA3F18ACBF96}"
+	ProjectSection(SolutionItems) = preProject
+		src\Common\AssemblyInfo.cs = src\Common\AssemblyInfo.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22F7B829-A72A-4320-A57F-9112A70CDCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F7B829-A72A-4320-A57F-9112A70CDCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F7B829-A72A-4320-A57F-9112A70CDCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F7B829-A72A-4320-A57F-9112A70CDCCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56972B12-AB73-45A3-8FA3-D7217135C50E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56972B12-AB73-45A3-8FA3-D7217135C50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56972B12-AB73-45A3-8FA3-D7217135C50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56972B12-AB73-45A3-8FA3-D7217135C50E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{099EE102-21AB-42A7-A866-B39BBBA419DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{099EE102-21AB-42A7-A866-B39BBBA419DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{099EE102-21AB-42A7-A866-B39BBBA419DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{099EE102-21AB-42A7-A866-B39BBBA419DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56972B12-AB73-45A3-8FA3-D7217135C50E} = {44F9698F-EC43-4110-B4EC-259394E2AEA0}
+		{099EE102-21AB-42A7-A866-B39BBBA419DB} = {93FF9EA8-FB9E-4931-AD7E-E4EF2596D97F}
+		{2E293FC6-02D9-4B2A-836C-FA3F18ACBF96} = {44F9698F-EC43-4110-B4EC-259394E2AEA0}
+	EndGlobalSection
+EndGlobal
